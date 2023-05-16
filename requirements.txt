@@ -1,0 +1,12 @@
+asgiref
+Django
+django-crum
+django-extensions
+django-ranged-response
+django-simple-captcha
+django-simple-history
+django-tinymce
+Pillow
+pytz
+sqlparse
+typing_extensions
