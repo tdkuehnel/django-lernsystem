@@ -1,11 +1,12 @@
 asgiref
-Django
+Django==4.2.1
 django-crum
 django-extensions
 django-ranged-response
 django-simple-captcha
 django-simple-history
 django-tinymce
+django-navtag
 Pillow
 pytz
 sqlparse
