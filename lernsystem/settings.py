@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django-navtag',
+    'django_navtag',
     'django_extensions',
     'simple_history',
     'captcha',    

@@ -8,3 +8,17 @@ def index(request):
     """
     return render(request, 'hauptanwendung/index.html', {'title': 'Anwendung Lernsystem',
     })
+
+def einschreibungen(request):
+    """
+    Einschreibungen
+    """
+    return render(request, 'hauptanwendung/einschreibungen.html', {'title': 'Einschreibungen',
+    })
+
+def zusatzfunktionen(request):
+    """
+    Zusatzfunktionen
+    """
+    return render(request, 'hauptanwendung/zusatzfunktionen.html', {'title': 'Zusatzfunktionen',
+    })

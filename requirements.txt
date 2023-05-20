@@ -1,5 +1,5 @@
 asgiref
-Django==4.2.1
+Django
 django-crum
 django-extensions
 django-ranged-response

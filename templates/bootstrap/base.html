@@ -16,39 +16,49 @@
         <link rel="icon" type="image/x-icon" href="{% static "/hauptanwendung/favicon.ico"%}"\>
         <script src={% static "/chartjs/3.6.1/chart.js"%}></script>
     </head>
-    
+
     <body>
 
         <header id="kopfzeile">
-            <nav id="header" class="navbar navbar-expand shadow justify-content-between navbar-light bg-white">                
-                <a class="navbar-brand pe-3 ps-4 ps-lg-2" href="index.html">Anwendung Lernsystem</a>
+            <nav id="header" class="navbar navbar-expand navbar-light bg-light">
+                <a class="navbar-brand" href="index.html">Anwendung Lernsystem</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 {% block navigation %}
                     {% include 'hauptanwendung/hauptnavigation.html' %}
                 {% endblock %}
             </nav>
         </header>
-    
-        <main role="main" class="container">
-            <nav id="seitennavigation" class="navbar">
+
+        <main role="main" class="d-flex">
+
+            <nav id="seitennavigation" class="navbar menu bg-light col-2">
                 {% block seitennavigation %}
                     {% include 'hauptanwendung/seitennavigation.html' %}
                 {% endblock %}
-                
-            {% block uberschrift %}
-                <h4>{{ title }}</h4>
-            {% endblock %}
-            {% block messages %}
-                {% if messages %}
-                    <aside class="alert alert-primary text-center" role="alert" id="mitteilungen">
-                        {% for message in messages %}
-                            <div class="mitteilung{% if message.tags %} {{ message.tags }}{% endif %}">{{ message|capfirst }}</div>
-                        {% endfor %}
-                    </aside>
-                {% endif %}
-            {% endblock messages %}
+            </nav>
 
             <section>
-                <article id="inhalt">
+                <article id="inhalt" class="d-flex">
+
+                    {% block uberschrift %}
+                        <div class="justify-content-center">
+                            <h4>{{ title }}</h4>
+                        </div>
+                    {% endblock %}
+
+                    {% block messages %}
+                        {% if messages %}
+                            <aside class="alert alert-primary text-center" role="alert" id="mitteilungen">
+                                {% for message in messages %}
+                                    <div class="mitteilung{% if message.tags %} {{ message.tags }}{% endif %}">{{ message|capfirst }}</div>
+                                {% endfor %}
+                            </aside>
+                        {% endif %}
+                    {% endblock messages %}
 
                     {% block inhalt %}
                         {{ content }}
@@ -57,10 +67,11 @@
                     {% block debug %}
                         {% include "hauptanwendung/debug.html" %}
                     {% endblock %}
+
                 </article>
             </section>
         </main>
-        
+
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         {% block chartjs %}{% endblock %}

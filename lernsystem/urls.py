@@ -19,12 +19,14 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
-from .views import index
+from .views import index, einschreibungen, zusatzfunktionen
 
 urlpatterns = [
 
     # Hauptansicht
     path('',                                                index,                             name='index'),
+    path('einschreibungen/',                                einschreibungen,                   name='einschreibungen'),
+    path('zusatzfunktionen/',                               zusatzfunktionen,                  name='zusatzfunktionen'),
 
     # Admin Interface
     path('admin/', admin.site.urls),

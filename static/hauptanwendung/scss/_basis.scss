@@ -16,7 +16,24 @@ $textfarben: (
 }
 
 body {
-  padding-top: 5rem;
+}
+
+.topnav {
+    padding-left: 0;
+    height: 3.625rem;
+    z-index: 1039;
+    font-size: 1rem;
+}
+
+section {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	padding: 0;
+}
+
+main2 {
+	display: flex;
 }
 
 .haupttext {

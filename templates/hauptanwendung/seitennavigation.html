@@ -1,0 +1,15 @@
+{% load i18n static cache_bust navtag %}
+
+{% nav text "active" %}
+<ul class="seitennav navbar-nav align-items-left ">
+    <li class="nav-item">
+        <a class="nav-link eintrag {{ nav.startseite }}" href="{% url 'index' %}">Startseite</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link eintrag {{ nav.einschreibungen }}" href="{% url 'einschreibungen' %}">Einschreibungen</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link eintrag {{ nav.zusatzfunktionen }}" href="{% url 'zusatzfunktionen' %}">Zusatzfunktionen</a>
+    </li>
+</ul>
+
